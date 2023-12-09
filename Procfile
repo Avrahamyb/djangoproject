@@ -1,0 +1,1 @@
+web: gunicorn gestionnaire_taches.wsgi

@@ -1,0 +1,35 @@
+
+{% extends 'templates/template.html' %}
+
+
+
+{% block body %}
+    <h1>Vos rappels</h1>
+
+    <ul>
+        {% if reminders %}   
+
+            <ul>
+                <span>---------------------------------------------------------------------------------------------</span>
+
+                {% for rem in reminders %}
+                
+                    <li>
+                        {{ rem.title }} -- {% if rem.isDone %} <strong style="color: green; font-size: 20px;">Fait</strong> {% else %}<strong style="color: red; font-size: 20px;">Non Fait</strong>{% endif %}
+                            
+                        <br> 
+                        {{ rem.description }} 
+                    </li>
+                    <span>---------------------------------------------------------------------------------------------</span>
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun livre disponible pour le moment.</p>
+        {% endif %}
+        
+            </ul>
+
+    
+
+{% endblock %}
